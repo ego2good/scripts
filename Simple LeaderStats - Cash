@@ -1,0 +1,10 @@
+game.Players.PlayerAdded:Connect(function(player)--here player means the player who will join the game
+    local leaderstats= Instance.new("Folder")-- This will create a folder when player joins 
+    leaderstats.Name= ("leaderstats")
+    leaderstats.Parent= player
+
+    --now currency
+    local cash= Instance.new("IntValue")
+    cash.Name= ("Cash")-- change ("Cash") to any word u want, but the brackets and commas
+    cash.Parent = leaderstats
+    cash.Value = 0 --change the ammount of money u want to give player
