@@ -1,0 +1,25 @@
+local shouldDestroy = true
+
+local SearchFor = {
+    "Points Leaderboard V3.2",
+}
+
+local Selection = game:GetService("Selection")
+
+for _, object in pairs(Selection:Get()) do
+    for i,v in pairs(object:GetDescendants()) do
+        if v:IsA("Script") then
+            print("Script: "..v.Name)
+            for j,k in pairs(SearchFor) do
+                if string.find(v.Name, k) then
+                    if shouldDestroy == false then
+                        warn("SCRIPT: "..v.Name)
+                    else
+                        v:Destroy()
+                        print("DESTROYED: "..v.Name)
+                    end
+                end
+            end
+        end
+    end
+end
